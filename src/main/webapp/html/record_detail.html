@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>投资详情</title>
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<div class="detail-main main">
+			<div class="content">
+				<div>
+					<div class="line">
+						<div class="line-l"><label class="label">委托金额:</label><span><em id="amount"></em>万</span></div>
+						<div class="line-r"><label class="label">出借期限:</label><span><em class="loanLimit"></em>个月</span></div>
+					</div>
+					<div class="line">
+						<div class="line-l"><label class="label">年化利率:</label><span><em class="yearRate"></em>%</span></div>
+						<div class="line-r"><label class="label">月息:</label><span><em class="monthRate"></em>元</span></div>
+					</div>
+					<div class="line">
+						<div class="line-l"><label class="label">起始日期:</label><span id="beginTime"></span></div>
+						<div class="line-r"><label class="label">到期日期:</label><span id="endTime"></span></div>
+					</div>
+					<div class="line">
+						<div class="line-l"><label class="label">项目状态:</label><span class="investStatus"></span></div>
+					</div>
+					<div class="line">
+						<div class="line-l line-double"><label class="label">付息日:</label>
+							每月<span class="interestDate"></span>日</div>
+						<div class="line-r line-one"><a id="showPDF" class="show-info"><span class="btn-txt">查看项目资料</span></a></div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+					<div class="foot">
+						<div class="has-icon"><i class="icon icon-counselor"></i><span class="counselor">投资顾问</span></div>
+						<div class="has-icon mid"><i class="icon icon-people"></i><span class="people managerName"></span></div>
+						<div class="has-icon"><a class="tel-a"><i class="icon icon-tel"></i><span class="tel phone"></span></a></div>
+					</div>
+				</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/wx.js"></script>
+		<script type="text/javascript" src="js/record_detail.js"></script>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta charset="utf-8"/>
+    <title>客户经理服务中心</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="service_center-main main">
+    <div class="content">
+        <label class="label">温馨提示：</label>仟邦资都为您提供优质、专业、安全和及时的服务，本公司将在每月度结束后的三个工作日内，
+向您预留的邮箱发送电子对账单。如需变更接收的邮件地址，应及时通知本公司。如有疑问，敬请联系专属客户经理。
+    </div>
+    <div class="btn-div">
+        <a id="tel" class="btn">联系客户经理</a>
+    </div>
+</div>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/wx.js"></script>
+<script type="text/javascript">
+    var param = getUrlParam();
+    var managerPhone = param.managerPhone;
+    document.getElementById("tel").href="tel:"+managerPhone;
+</script>
+</body>
+</html>

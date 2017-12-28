@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta charset="utf-8"/>
+    <title>账单详情</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="month-detail-main main">
+    <div class="content">
+        <p class="p1"><span>单位:人民币元整</span></p>
+        <p class="p2"><span class="amount"></span></p>
+        <p class="p3"><span class="label">出借金额</span><span><em class="amount1"></em>万</span></p>
+        <p class="p3"><span class="label">计息起始日</span><span class="startTime"></span></p>
+        <p class="p3"><span class="label">出借到期日</span><span class="endTime"></span></p>
+        <p class="p3"><span class="label">年化收益</span><span><em class="yearRate"></em>%</span></p>
+        <p class="p3"><span class="label">本金到账金额</span><span class="principal"></span></p>
+        <p class="p3"><span class="label">到账日期</span><span class="billDate"></span></p>
+    </div>
+    <div class="other"><a id="serivce"><span class="has-icon txt">对此账单有疑问<i class="icon icon-q"></i></span></a></div>
+</div>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/month_record_detail.js"></script>
+<script type="text/javascript" src="js/wx.js"></script>
+</body>
+</html>

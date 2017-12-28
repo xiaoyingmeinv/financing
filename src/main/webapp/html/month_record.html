@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta charset="utf-8"/>
+    <title>历史账单</title>
+    <link rel="stylesheet" href="html/css/style.css">
+</head>
+<body>
+<div class="month-main main has-padding">
+    <div class="outer">
+        <div class="inner">
+            <div class="lists record-list">
+
+                #if($data!="{}")
+                    #foreach($info in $data)
+                        <div class="item-div">
+                            <div class="header">
+                                <h1 class="head-txt"><em>${info[0].yearMonth}</em>出借总额 <em>${info[0].sumMoney}万</em></h1>
+                            </div>
+                            #foreach($detail in $info)
+                            <div class="record-item relative show-detail" data-id="${detail.billId}">
+                                <div class="item-l">
+                                    <div>出借金额</div>
+                                    <div>$detail.amount1万</div>
+                                </div>
+                                <div class="item-r">
+                                    <div>
+                                        <label class="label_1">$detail.earnMoney</label>
+                                    </div>
+                                    <div>
+                                        <label>到账日期:</label>
+                                        <span class="investStatus">$detail.billDate</span>
+                                    </div>
+                                </div>
+                                #if($detail.isGetMoney=="本金已到账")
+                                    <div class="month_msg">本金已到账</div>
+                                #end
+                            </div>
+                            #end
+                        </div>
+                    #end
+                #else
+                    <div class="not_data">还没有对账单数据</div>
+                #end
+            </div>
+        </div>
+    </div>
+</div>
+<script src="html/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="html/js/common.js"></script>
+<script type="text/javascript" src="html/js/wx.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $(".month-main .show-detail").on("click",function(){
+            var id = $(this).attr("data-id");
+            window.location.href="/financing/html/month_record_detail.html?detailId="+id;
+        });
+    });
+</script>
+</body>
+</html>

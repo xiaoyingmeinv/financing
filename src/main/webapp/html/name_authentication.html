@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>实名认证</title>
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+	  <div class="user-main main">
+	    <div class="content">
+	    
+			<div class="cell">
+				<p class="has-icon"><i class="icon icon-msg"></i><span class="title">姓名</span></p>
+				<p class="description customerName">${customerName}</p>
+			</div>
+				
+			<div class="cell">
+				<p class="has-icon"><i class="icon icon-id-code"></i><span class="title">身份证号</span></p>			
+				<input id="idNumIpt" type="text" placeholder="请输入本人的身份证号" />
+			</div>
+			
+			<div class="cell">
+					<p class="has-icon"><i class="icon icon-account"></i><span class="title">银行帐号</span></p>
+					<p class="description bankAccount">${bankAccount}</p>
+			</div>
+			<div class="cell">
+				<p class="has-icon"><i class="icon icon-id-code"></i><span class="title">身份证正反面以及手持照片</span></p>
+				<div class="id-card-div">
+					<div class="id-picFront relative relativeImg" >
+						<!-- #if(!$idPicFront) -->
+						<div class="img-title idCard" flag="front">
+							<div class="img-div">
+								<span>请上传身份证正面</span>
+								<img class="id_icon" src="images/add.png"/>
+							</div>
+						</div>
+					<!-- 	#end -->
+						<img id="ImgIdPicFont" class="idimg" src="${idPicFront}"/>
+					</div>
+					<div class="id-picBack relative relativeImg" >
+						<!-- #if(!$idPicBack) -->
+						<div class="img-title idCard" flag="back">
+							<div class="img-div">
+								<span>请上传身份证背面</span>
+								<img class="id_icon" src="images/add.png" />
+							</div>
+						</div>
+						<!-- #end -->
+						<img id="ImgIdPicBack" class="idimg" src="${idPicBack}"/>
+					</div>					
+					<br>
+					<div class="id-picHand relative relativeImg">
+						<!-- #if(!$idPicHand) -->
+						<div class="img-title idCard" flag="hand">
+							<div class="img-div">
+								<span>请上传手持身份证照片</span>
+								<img class="id_icon" src="images/add.png" />
+							</div>
+						</div>
+						<!-- #end -->
+						<img id="ImgIdPicHand" class="idimg" src="${idPicHand}"/>
+					</div>
+					
+				</div>
+			    <div class="btn-div">
+				   <button class="btn" id="saveAddress">实名认证</button>
+			    </div>
+			</div>
+			
+			
+		</div>
+	</div>	
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/wx.js"></script>
+		<script type="text/javascript" src="html/js/wx.js"></script>
+		<script type="text/javascript" src="html/js/user.js"></script>
+		<script type="text/javascript" src="js/nameAuthentication.js"></script>
+	</body>
+</html>

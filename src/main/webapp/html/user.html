@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>个人信息</title>
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+		<meta charset="utf-8"/>
+		<meta http-equiv="Expires" CONTENT="0"> 
+		<meta http-equiv="Cache-Control" CONTENT="no-cache"> 
+		<meta http-equiv="Pragma" CONTENT="no-cache"> 
+		<link rel="stylesheet" type="text/css" href="html/css/style.css"/>
+	</head>
+	<body>
+		<div class="user-main main">
+			<div class="content">
+				<div class="cell">
+					<p class="has-icon"><i class="icon icon-msg"></i><span class="title">姓名</span></p>
+					<p class="description customerName">${customerName}</p>
+				</div>
+				<div class="cell">
+					<p class="has-icon"><i class="icon icon-gender"></i><span class="title">性别</span></p>
+					<p class="description sex">${sex}</p>
+				</div>
+				<div class="cell">
+					<p class="has-icon"><i class="icon icon-bathday"></i><span class="title">生日</span></p>
+					<p id="birthday" class="description">${birthday}</p>
+				</div>
+				<div class="cell">
+					<p class="has-icon"><i class="icon icon-bank"></i><span class="title">开户银行</span></p>
+					<p class="description openBank">${openBank}</p>
+				</div>
+				<div class="cell">
+					<p class="has-icon"><i class="icon icon-account"></i><span class="title">银行帐号</span></p>
+					<p class="description bankAccount">${bankAccount}</p>
+				</div>
+				<div class="cell">
+					<p class="has-icon"><i class="icon icon-address"></i><span class="title">邮寄地址</span><span class="remark"> (此地址会作为邮寄地址,请务必确认)</span></p>
+					<p class="description relative">
+						<span class="registerAddress">${registerAddress}</span>
+						<a class="updateAddress" href="/financing/html/update_address.html?address=${registerAddress}">修改</a>
+					</p>
+					
+				</div>
+				<div class="cell">
+					<p class="has-icon"><i class="icon icon-tel"></i><span class="title">联系电话1</span></p>
+					<p class="description phone1">${phone1}</p>
+				</div>
+				#if($phone2&&$phone2!="")
+				<div class="cell">
+					<p class="has-icon"><i class="icon icon-tel"></i><span class="title">联系电话2</span></p>
+					<p class="description phone2">${phone2}</p>
+				</div>
+				#end
+				#if($idNum&&$idNum!="")
+				<div class="cell">
+					<p class="has-icon"><i class="icon icon-id-code"></i><span class="title">身份证号</span></p>
+					<p class="description idNum">${idNum}</p>
+				</div>
+				#end
+				<!--  新增    -->
+				<div class="cell">
+					<p class="has-icon"><i class="icon icon-id-code"></i><span class="title">实名认证情况</span></p>
+					<p class="description relative">
+					  <span class="approveStatusCls">${approveStatus}</span>
+					  <input type="hidden" value="${}">
+					  <a class="updateAddress" href="/financing/html/name_authentication.html?customerName=${customerName}">申请认证</a>
+					</p>
+				</div>
+				<div class="cell" style="display:none;">
+					<p><span class="title">身份证正反面照片</span></p>
+					<div class="id-card-div">
+						<div class="id-picFront relative">
+							#if(!$idPicFront)
+							<div class="img-title idCard" flag="front">
+								<div class="img-div">
+									<span>请上传身份证正面</span>
+									<img class="id_icon" src="html/images/add.png"/>
+								</div>
+							</div>
+							#end
+							<img id="ImgIdPicFont" class="idimg" src="${idPicFront}"/>
+						</div>
+						<div class="id-picBack relative">
+							#if(!$idPicBack)
+							<div class="img-title idCard" flag="back">
+								<div class="img-div">
+									<span>请上传身份证背面</span>
+									<img class="id_icon" src="html/images/add.png" />
+								</div>
+							</div>
+							#end
+							<img id="ImgIdPicBack" class="idimg" src="${idPicBack}"/>
+						</div>
+					</div>
+				</div>
+				<div class="cell add-time">
+					<p class="remark">首次加入时间:<em id="addTime">${addTime}</em></p>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="html/js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript" src="html/js/common.js"></script>
+		<script type="text/javascript" src="html/js/wx.js"></script>
+		<script type="text/javascript" src="html/js/user.js"></script>
+		<script type="text/javascript" src="js/wx.js"></script>
+	</body>
+</html>

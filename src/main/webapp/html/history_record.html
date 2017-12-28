@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta charset="utf-8"/>
+    <title>历史投资记录</title>
+    <link rel="stylesheet" href="html/css/dropload.min.css">
+    <link rel="stylesheet" href="html/css/style.css">
+</head>
+<body>
+<div class="outer record-main main">
+    <div class="inner">
+        <div class="lists record-list">
+            #foreach($item in $list)
+                <div class="record-item">
+                <div class="item-l">
+                    <div>
+                        <label class="label">起始日期:</label>
+                        <span class="loanLimit">$item.loanLimit</span>
+                    </div>
+                    <div>
+                        <label class="label">委托金额:</label>
+                        <span class="w-5em"><em class="amount">$item.amount</em>万</span>
+                        <label class="label">项目状态:</label>
+                        <span class="investStatus">$item.investStatus</span>
+                    </div>
+                </div>
+                <div class="item-r"><a class="goToDetail" href="/financing/html/record_detail.html?investmentInfoId=$item.investmentInfoId"><span class="label">查看明细>></span></a></div>
+            </div>
+            #end
+        </div>
+    </div>
+</div>
+<script src="html/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="html/js/common.js"></script>
+<script type="text/javascript" src="html/js/wx.js"></script>
+<script src="html/js/dropload.min.js"></script>
+<script type="text/javascript" src="html/js/history_record.js"></script>
+<script type="text/javascript" src="js/wx.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>微预约</title>
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/mobiscroll.custom-2.5.0.min.css"/>
+
+	</head>
+	<body>
+		<div class="appoint-main main">
+			<div class="content">
+				<div class="check_num">
+					<p class="p1">
+						<span class="txt">预约金额 :</span>
+						<input id="ex15" type="number" placeholder="10万至1000万" />万元
+					</p>
+					
+				</div>
+				<div class="check_date">
+					<p class="p1"><span class="txt">预约日期:</span>
+						<span class="date">
+							<span class="data-span"><span><em class="year">-</em>年<em class="month">-</em>月<em class="day">-</em>日</span></span>
+							<input id="scroller" />
+						</span>
+					</p>
+				</div>
+				<div class="msg">msg</div>
+				<div class="btn-div">
+					<button id="appointBtn" class="btn">确定</button>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript" src="js/wx.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/mobiscroll.custom-2.5.0.min.js"></script>
+		<script type="text/javascript" src="js/appoint.js"></script>
+	</body>
+</html>
